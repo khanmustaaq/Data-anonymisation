@@ -83,7 +83,9 @@ def userRegister():
         f.close()
         print(hmac + "," + message)
         ftp = ftplib.FTP_TLS("ftp.drivehq.com")
-        ftp.login("mushtaaqkhan2002", "jupiteR@1627")
+        drivehq_username=''
+        drivehq_password = ''
+        ftp.login(drivehq_username, drivehq_password)
         ftp.prot_p()
         file = open(username + ".txt", "rb")
         ftp.storbinary("STOR " + username + ".txt", file)
